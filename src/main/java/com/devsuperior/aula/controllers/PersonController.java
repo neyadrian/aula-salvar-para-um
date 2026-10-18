@@ -14,8 +14,10 @@ import java.net.URI;
 @RequestMapping(value = "/person")
 public class PersonController {
 
+    
+
     @PostMapping
-    public ResponseEntity<PersonDepartmentDTO> insert( @RequestBody ProductDTO dto) {
+    public ResponseEntity<PersonDepartmentDTO> insert( @RequestBody PersonDepartmentDTO dto) {
         dto = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(dto.getId()).toUri();
