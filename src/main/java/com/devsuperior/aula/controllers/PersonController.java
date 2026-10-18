@@ -1,6 +1,8 @@
 package com.devsuperior.aula.controllers;
 
 import com.devsuperior.aula.dto.PersonDepartmentDTO;
+import com.devsuperior.aula.services.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +16,8 @@ import java.net.URI;
 @RequestMapping(value = "/person")
 public class PersonController {
 
-    
+    @Autowired
+    private PersonService service;
 
     @PostMapping
     public ResponseEntity<PersonDepartmentDTO> insert( @RequestBody PersonDepartmentDTO dto) {
